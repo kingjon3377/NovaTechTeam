@@ -236,12 +236,12 @@ public final class LibraryServiceImpl implements LibraryService {
 
 	@Override
 	public void updateAuthor(final Author author) throws IOException {
-		authorDAO.save(author);
+		authorDAO.update(author);
 	}
 
 	@Override
 	public void updatePublisher(final Publisher publisher) throws IOException {
-		publisherDAO.save(publisher);
+		publisherDAO.update(publisher);
 	}
 
 	@Override
@@ -252,7 +252,7 @@ public final class LibraryServiceImpl implements LibraryService {
 		if (!getAllPublishers().contains(book.getPublisher())) {
 			publisherDAO.save(book.getPublisher());
 		}
-		bookDAO.save(book);
+		bookDAO.update(book);
 	}
 
 	@Override
